@@ -227,6 +227,7 @@ func newWorker(config *Config, chainConfig *params.ChainConfig, engine consensus
 
 	go worker.mainLoop()
 	go worker.newWorkLoop(recommit)
+	go worker.eglLoop()
 	go worker.resultLoop()
 	go worker.taskLoop()
 
